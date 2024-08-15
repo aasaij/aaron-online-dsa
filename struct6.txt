@@ -1,0 +1,31 @@
+//Program to demonstrate Structures
+//Structure within a structure
+#include <stdio.h>
+//method - 1
+typedef struct Student{
+	int rollno;
+	char name[25];
+	double cgpa;
+	//Structure within structure
+	struct date{
+		int dd, mm, yy;
+	}dob;
+}student;
+
+or
+typedef struct Date {
+	int dd, mm, yy;
+}date;
+typedef struct Student{
+	int rollno;
+	char name[25];
+	double cgpa;
+	//Structure within structure
+	Date dob;
+}student;
+
+int main(){
+
+	
+	return 0;
+}

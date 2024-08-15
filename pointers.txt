@@ -1,0 +1,19 @@
+//Pointer
+What?
+It is a variable used to store the address another variable
+
+It is used to point something
+
+integer pointer -> used to point an integer
+char pointer -> used to point a character
+float pointer -> used to point a float
+structure pointer -> used to point a structure
+
+Why?
+1. Fasten the execution of your application
+2. To create Dynamic Array
+3. To implement call by reference 
+
+How ?
+
+Symbol Table
