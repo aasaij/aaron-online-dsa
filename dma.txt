@@ -1,0 +1,34 @@
+Dynamic Memory Allocation (DMA)
+
+malloc()
+	void* malloc(size_t size);
+
+size -->  Number of bytes to be allotted in the heap segment
+Return value :
+	returns the pointer if it is success
+	return NULL otherwise
+	
+	
+calloc()
+	void* calloc(size_t nitems, size_t size_of_an_item);
+	
+	nitems --> Number of items,
+	size_of_an_item --> size of each element
+
+Return value :
+	returns the pointer if it is success
+	return NULL otherwise
+realloc()
+	void* realloc(void* old_block, size_t new_size);
+	
+	old_block  --> the pointer which is allotted memory using malloc() or calloc()
+	new_size   --> new size of bytes to be allotted for the same pointer
+	
+Return value :
+	returns the pointer if it is success
+	return NULL otherwise
+
+free()
+	void free(void);
+	
+	Clears the memory which is allotted using malloc, calloc, realloc
