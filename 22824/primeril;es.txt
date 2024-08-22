@@ -1,0 +1,15 @@
+Sieve Algorithm
+
+All prime numbers are either 6N+1 or 6N-1 except 2 & 3
+
+17  => 6 x 3 -1
+
+19 => 6 x 3 + 1
+
+29 => 6 x 5 - 1
+5  => 6 x 1 - 1
+
+but all 6N+1 and 6N-1 are not prime numbers
+
+25 ==> 6 x 4 + 1
+35 ==> 6 x 6 - 1
