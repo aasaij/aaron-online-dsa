@@ -1,0 +1,25 @@
+//Function
+What?
+Set of code to perform specific task
+
+Why?
+To avoid repetition  ==> strlen()
+To implement code reusability
+To implement optimization
+
+How?
+
+function definition syntax
+
+[<return_type>] <function_name> (<parameter_list>){
+	<function_body>
+	[return <value>]
+}
+
+//function declaration or function proto-type syntax
+<return_type> <function_name> (<datatype_list>)
+
+
+function calling syntax
+
+<function_name>(<parameter_list>);
