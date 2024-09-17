@@ -1,7 +1,7 @@
 //Program to demonstrate linkedlist 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <stdbool.h>
 typedef struct Node{
 	int data;
 	struct Node *nxt;
@@ -104,19 +104,45 @@ node* deleteAt(node* list, int position){
 	}
 	return list;	
 }
+//Print the list using iteration
+//void printList(node *list){
+//	node *temp = list;
+//	if(temp!=NULL){ // list is not empty
+//		printf("\n[");
+//		while (temp->nxt!=NULL){
+//			printf("%d, ", temp->data);
+//			temp = temp->nxt;
+//		}
+//		printf("%d]\n",temp->data);
+//	}	
+//	else{
+//		printf("[]");
+//	}
+//}
+//Printing the list using recursive
 void printList(node *list){
-	node *temp = list;
-	if(temp!=NULL){ // list is not empty
-		printf("\n[");
-		while (temp->nxt!=NULL){
-			printf("%d, ", temp->data);
-			temp = temp->nxt;
-		}
-		printf("%d]\n",temp->data);
-	}	
-	else{
-		printf("[]");
+	if(list->nxt){
+		printf("%d, ", list->data);
+		printList(list->nxt);
 	}
+	else{
+		printf("%d\n", list->data);
+	}
+}
+//Printing the list in reverse order
+void reverseList(node* list){
+	if (list){
+		reverseList(list->nxt);
+		printf("%d ", list->data);
+	}
+}
+//Finding an element in given linked list
+bool find(node* list, int searchElement){
+	for (node *temp = list; temp!=NULL;temp=temp->nxt){
+		if (temp->data == searchElement)
+			return true;
+	}
+	return false;
 }
 int main(){
 	node *root = NULL;
@@ -131,17 +157,23 @@ int main(){
 //	root = insertAt(root,15,450);
 //	for (int i = 1; i<=10; i++)
 //		root = insertAtBegin(root, i);
-	printList(root);
+//	printList(root);
 //	printf("%d", length(root));
-	root = deleteFirstNode(root);
-	root = deleteLastNode(root);
-	printList(root);
-	root = deleteAt(root, 5);
-	root = deleteAt(root, 7);
-	printList(root);
+//	root = deleteFirstNode(root);
+//	root = deleteLastNode(root);
+	//printList(root);
+//	root = deleteAt(root, 5);
+//	root = deleteAt(root, 7);
+	//printList(root);
 //	root = deleteAt(root, 2);
 //	root = deleteAt(root, 2);
 //	root = deleteAt(root, 1);
 	printList(root);
+//	reverseList(root);
+	int search = 40;
+	if (find(root, search))
+		printf("%d Found!", search);
+	else
+		printf("%d Not Found!", search);
 	return 0;
 }

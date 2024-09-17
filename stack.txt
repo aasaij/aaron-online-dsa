@@ -1,0 +1,14 @@
+//Stack -> Stack is a linear DS used to implement LIFO
+/*
+Applications:
+1. Recursion
+2. Expression evaluation
+3. Undo/Redo
+
+Operations:
+Push() --> To push the elements inside the stack
+Pop()  --> to pop the last element from the stack
+isFull() --> to check whether the stack is full or not
+isEmpty() --> to check whether the stack is empty or not
+Peek()  --> to return the top element in the stack
+*/
