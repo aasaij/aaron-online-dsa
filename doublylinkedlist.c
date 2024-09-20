@@ -28,7 +28,7 @@ node* addFirst(node* list, int value){
 
 void printList(node* list){
 	node* temp = list;
-	printf("Forward traversal : \n");
+	printf("\nForward traversal : \n");
 	printf("[");
 	while(temp && temp->nxt){
 		printf("%d,", temp->data);
@@ -62,12 +62,59 @@ node* addLast(node* list, int value){
 	}
 	return list;
 }
+//function to delete first element of the list
+node* deleteFirst(node* list){
+	if(list){//if list is not empty 
+		node* temp = list;
+		list = temp->nxt;
+		if (list){//if list is having more than one element
+			list->prev = NULL;
+		}
+		free(temp);		
+	}
+	return list;
+}
+//function to delete the last element in the list
+node* deleteLast(node* list){
+	if(list){//if list is not empty
+		if (!list->nxt) //if list is having only one element
+			return deleteFirst(list);
+		node* temp = list;
+		//list is having more than one element
+		while(temp->nxt->nxt) temp = temp->nxt;
+		node *t = temp->nxt;
+		temp->nxt = NULL;
+		free(t);
+	}
+	return list;
+}
+//function to delete an element in the specified position
+node* deleteAt(node* list, int position){
+	if(position>=0&&list){
+		if (position==0 || position == 1)
+			return deleteFirst(list);
+		node* temp = list;
+		for(int i = 2; i<position && temp->nxt; i++) temp = temp->nxt;
+		if (temp->nxt){
+			node *t = temp->nxt;
+			temp->nxt = t->nxt;
+			if(t->nxt)
+				t->nxt->prev = temp;
+			free(t);			
+		}	
+	}
+	return list;
+}
 int main(){
 	node* root = NULL;
-	root = addFirst(root, 10);
-	root = addFirst(root, 20);
-	root = addFirst(root, 30);
-	root = addLast(root, 40);
+//	root = addFirst(root, 10);
+//	root = addFirst(root, 20);
+//	root = addFirst(root, 30);
+//	root = addLast(root, 40);
+	printList(root);
+//	root = deleteFirst(root);
+//	root = deleteLast(root);
+	root = deleteAt(root, 2);
 	printList(root);
 	return 0;
 }
